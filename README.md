@@ -10,10 +10,10 @@ My personal zsh themes.
 
 ```nix
   ikostov-zsh-themes = pkgs.fetchFromGitHub {
-    owner = "IliyanKostov9/";
+    owner = "IliyanKostov9";
     repo = "zsh-themes";
     rev = "master";
-    hash = "";
+    hash = "sha256-lyo8nRXjOoAJRDUNsF8+IHRZSrsGBuLMcrYBTAGP4iA=";
   };
 
   zsh-themes = pkgs.stdenv.mkDerivation {
