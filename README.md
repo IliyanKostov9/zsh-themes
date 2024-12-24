@@ -36,3 +36,9 @@ oh-my-zsh = {
   custom = "${zsh-themes}";
 };
 ```
+
+## Themes
+
+### af-purple-magic
+
+![af-purple-magic](./assets/af-purple-magic.png)
