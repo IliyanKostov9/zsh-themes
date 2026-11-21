@@ -64,6 +64,7 @@ bureau_git_status() {
     result+="$ZSH_THEME_GIT_PROMPT_STASHED"
   fi
 
+  result+=" %{$fg[magenta]%}\uE0A0}"
   echo $result
 }
 
@@ -96,13 +97,10 @@ bureau_git_prompt() {
 _PATH="%{$fg_bold[white]%}%~%{$reset_color%}"
 
 if [[ $EUID -eq 0 ]]; then
-  _USERNAME="%{$fg_bold[red]%}%n"
   _LIBERTY="%{$fg[red]%}#"
 else
-  _USERNAME="%{$fg_bold[white]%}%n"
   _LIBERTY="%{$fg[green]%}$"
 fi
-_USERNAME="$_USERNAME%{$reset_color%}@%m"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
 
@@ -116,8 +114,8 @@ get_space () {
   printf ' %.0s' {1..$SPACES}
 }
 
-_1LEFT="$_USERNAME $_PATH"
-_1RIGHT="[%*]"
+_1LEFT="$_PATH"
+_1RIGHT="%*"
 
 bureau_precmd () {
   _1SPACES=`get_space $_1LEFT $_1RIGHT`
