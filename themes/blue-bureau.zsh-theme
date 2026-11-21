@@ -64,7 +64,6 @@ bureau_git_status() {
     result+="$ZSH_THEME_GIT_PROMPT_STASHED"
   fi
 
-  result+=" %{$fg[magenta]%}\uE0A0}"
   echo $result
 }
 
@@ -95,14 +94,14 @@ bureau_git_prompt() {
 
 
 _PATH="%{$fg_bold[white]%}%~%{$reset_color%}"
-_LAMBDA_SYMBOL="${FG[075]}(${FG[078]}"
+_LAMBDA_SYMBOL="λ"
 
 if [[ $EUID -eq 0 ]]; then
-  _LIBERTY="%{$fg[red]%}$_LAMBDA_SYMBOL"
+  _LIBERTY="%{$fg[red]%}λ"
 else
-  _LIBERTY="%{$fg[green]%}$_LAMBDA_SYMBOL"
+  _LIBERTY="%{$fg[green]%}λ"
 fi
-_LIBERTY="$_LIBERTY%{$reset_color%}$_LAMBDA_SYMBOL"
+_LIBERTY="$_LIBERTY%{$reset_color%}λ"
 
 
 get_space () {
