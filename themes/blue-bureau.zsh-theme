@@ -8,7 +8,7 @@ ZSH_THEME_NVM_PROMPT_SUFFIX=""
 ### Git [±master ▾●]
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[green]%}±%{$reset_color%}%{$fg_bold[white]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
@@ -95,13 +95,14 @@ bureau_git_prompt() {
 
 
 _PATH="%{$fg_bold[white]%}%~%{$reset_color%}"
+_LAMBDA_SYMBOL="${FG[075]}(${FG[078]}"
 
 if [[ $EUID -eq 0 ]]; then
-  _LIBERTY="%{$fg[red]%}#"
+  _LIBERTY="%{$fg[red]%}$_LAMBDA_SYMBOL"
 else
-  _LIBERTY="%{$fg[green]%}$"
+  _LIBERTY="%{$fg[green]%}$_LAMBDA_SYMBOL"
 fi
-_LIBERTY="$_LIBERTY%{$reset_color%}"
+_LIBERTY="$_LIBERTY%{$reset_color%}$_LAMBDA_SYMBOL"
 
 
 get_space () {
@@ -115,7 +116,7 @@ get_space () {
 }
 
 _1LEFT="$_PATH"
-_1RIGHT='$(nvm_prompt_info) $(bureau_git_prompt)'
+_1RIGHT=""
 
 bureau_precmd () {
   _1SPACES=`get_space $_1LEFT $_1RIGHT`
@@ -124,8 +125,8 @@ bureau_precmd () {
 }
 
 setopt prompt_subst
-PROMPT='> $_LIBERTY '
-# RPROMPT='$(nvm_prompt_info) $(bureau_git_prompt)'
+PROMPT='$_LIBERTY '
+RPROMPT='$(nvm_prompt_info) $(bureau_git_prompt)'
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd bureau_precmd
