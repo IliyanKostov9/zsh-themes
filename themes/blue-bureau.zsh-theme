@@ -93,7 +93,7 @@ bureau_git_prompt() {
 }
 
 
-_PATH="%{$fg_bold[magenta]%}%~%{$reset_color%}"
+_PATH="%{$fg_bold[cyan]%}%~%{$reset_color%}"
 
 if [[ $EUID -eq 0 ]]; then
   _LIBERTY="%{$fg[red]%}λ"
