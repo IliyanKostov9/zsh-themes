@@ -17,6 +17,8 @@ ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STASHED="(%{$fg_bold[blue]%}✹%{$reset_color%})"
 
+RPS1="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+
 bureau_git_info () {
   local ref
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
@@ -94,14 +96,13 @@ bureau_git_prompt() {
 
 
 _PATH="%{$fg_bold[white]%}%~%{$reset_color%}"
-_LAMBDA_SYMBOL="λ"
 
 if [[ $EUID -eq 0 ]]; then
   _LIBERTY="%{$fg[red]%}λ"
 else
   _LIBERTY="%{$fg[green]%}λ"
 fi
-_LIBERTY="$_LIBERTY%{$reset_color%}λ"
+_LIBERTY="$_LIBERTY%{$reset_color%}"
 
 
 get_space () {
