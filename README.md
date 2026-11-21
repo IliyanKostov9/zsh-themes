@@ -42,3 +42,7 @@ oh-my-zsh = {
 ### af-purple-magic
 
 ![af-purple-magic](./assets/af-purple-magic.png)
+
+### bureau
+
+![bureau](./assets/bureau.png)
