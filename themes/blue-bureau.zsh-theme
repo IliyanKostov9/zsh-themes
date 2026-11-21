@@ -98,7 +98,7 @@ _PATH="%{$fg_bold[cyan]%}%~%{$reset_color%}"
 if [[ $EUID -eq 0 ]]; then
   _LIBERTY="%{$fg[red]%}λ"
 else
-  _LIBERTY="%{$fg[cyan]%}λ"
+  _LIBERTY="%{$fg[yellow]%}λ"
 fi
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
