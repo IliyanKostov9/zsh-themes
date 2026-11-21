@@ -45,4 +45,4 @@ oh-my-zsh = {
 
 ### bureau
 
-![bureau](./assets/bureau.png)
+![blue-bureau](./assets/blue-bureau.png)
