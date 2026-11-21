@@ -43,6 +43,6 @@ oh-my-zsh = {
 
 ![af-purple-magic](./assets/af-purple-magic.png)
 
-### bureau
+### blue-bureau
 
 ![blue-bureau](./assets/blue-bureau.png)
